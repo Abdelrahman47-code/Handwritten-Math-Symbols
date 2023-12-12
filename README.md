@@ -7,4 +7,4 @@ This repository contains the code and resources for a project focused on recogni
 - Web Application: Develop a Flask-based web application for real-time symbol recognition.
 
 ## Demo:
-[video.mp4]
+[![Watch the Demo]](demo.mp4)
