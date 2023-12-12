@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Math Symbols Recognition</title>
+    <link rel="icon" href="static/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="static/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: url("static/board.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #000;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 24px;
+            background-color: #000;
+            color: #fff;
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">Handwritten Math Symbols Recognition</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="image" name="image" required onchange="updateLabel()">
+                <label class="custom-file-label" for="image">Choose an image...</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Predict</button>
+        </form>
+    </div>
+    
+    <div class="watermark">Made by: Abdelrahman Eldaba</div>
+
+    <script>
+        function updateLabel() {
+            var input = document.getElementById('image');
+            var label = input.nextElementSibling;
+            var fileName = input.files[0].name;
+            label.innerText = fileName;
+        }
+    </script>
+</body>
+</html>
